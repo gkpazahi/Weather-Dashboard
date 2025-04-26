@@ -6,6 +6,7 @@ import requests
 API_KEY = 'apiKey'  # Replace with your OpenWeatherMap API key
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
 
+# Function to get a city's weather
 def get_weather(city):
     """
     Fetch weather data for the given city using OpenWeatherMap API.
@@ -34,7 +35,8 @@ def get_weather(city):
     except Exception as e:
         messagebox.showerror("Error", f"An error occurred: {e}")
         return None
-# To display reslts of city weather
+        
+# To display results of city weather
 def display_weather():
     """
         Fetch and display weather data for the entered city.
@@ -73,10 +75,7 @@ def clear_entry():
     humidity_label.config(text="")
     desc_label.config(text="")
     icon_label.image = None
-    icon_label.config(image=None)  # Clear the icon if using an image
-    
-    
-    
+    icon_label.config(image=None)  # Clear the icon if using an image    
     
 # Create the main window
 root = tk.Tk()
